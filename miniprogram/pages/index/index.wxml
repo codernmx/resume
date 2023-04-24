@@ -54,4 +54,12 @@
 		</view>
 	</view>
 
+	<view class="card top-30">
+		<view class="title">技能标签</view>
+		<view class="top-30" style="display:flex;flex-wrap:wrap;justify-content: start;">
+			<van-tag style="margin:0 20rpx 20rpx 0" type="{{item.type}}" text-color="#fff" wx:for="{{tags}}" wx:key="index">{{item.name}}</van-tag>
+		</view>
+	</view>
+	<view style="height: 120rpx;"></view>
+
 </view>
