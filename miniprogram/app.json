@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/experience/index",
+    "pages/project/index",
+    "pages/contact/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "个人简历",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#53cac3",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "基本信息",
+        "iconPath": "/assets/imgs/base.png",
+        "selectedIconPath": "/assets/imgs/base_a.png"
+      },
+      {
+        "pagePath": "pages/experience/index",
+        "text": "工作经历",
+        "iconPath": "/assets/imgs/experience.png",
+        "selectedIconPath": "/assets/imgs/experience_a.png"
+      },
+      {
+        "pagePath": "pages/project/index",
+        "text": "项目经历",
+        "iconPath": "/assets/imgs/project.png",
+        "selectedIconPath": "/assets/imgs/project_a.png"
+      },
+      {
+        "pagePath": "pages/contact/index",
+        "text": "联系方式",
+        "iconPath": "/assets/imgs/contact.png",
+        "selectedIconPath": "/assets/imgs/contact_a.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
