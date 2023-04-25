@@ -14,6 +14,17 @@ Page({
         onLoad() {
 
         },
+        call() {
+                wx.makePhoneCall({
+                        phoneNumber: '19923756596' //仅为示例，并非真实的电话号码
+                })
+        },
+        copy(e: any) {
+                wx.setClipboardData({
+                        data: e.currentTarget.dataset.value,
+                        success(res) { }
+                })
+        },
 
         /**
          * 生命周期函数--监听页面初次渲染完成

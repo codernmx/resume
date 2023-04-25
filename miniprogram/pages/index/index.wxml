@@ -1,6 +1,7 @@
 <view class="page">
 	<view class="card top-30">
 		<view class="title">教育经历</view>
+		<van-divider />
 		<view class="top-30 flex between">
 			<view>重庆工程学院</view>
 			<view>数字媒体技术</view>
@@ -11,6 +12,7 @@
 
 	<view class="card top-30">
 		<view class="title">教育经历</view>
+		<van-divider />
 		<view class="top-30 flex between">
 			<view>重庆工程学院</view>
 			<view>数字媒体技术</view>
@@ -23,6 +25,7 @@
 
 	<view class="card top-30">
 		<view class="title">基本信息</view>
+		<van-divider />
 		<view class="top-30 flex between">
 			<view>学历</view>
 			<view>全日制本科</view>
@@ -49,6 +52,7 @@
 
 	<view class="card top-30">
 		<view class="title">个人优势</view>
+		<van-divider />
 		<view class="top-30" style="text-indent: 20rpx;">
 			熟悉 Vue 全家桶+Element/Iview，React 全家桶+Ant Design，Uniapp，Nodejs ，可以独立开发。
 		</view>
@@ -56,6 +60,7 @@
 
 	<view class="card top-30">
 		<view class="title">技能标签</view>
+		<van-divider />
 		<view class="top-30" style="display:flex;flex-wrap:wrap;justify-content: start;">
 			<van-tag style="margin:0 20rpx 20rpx 0" type="{{item.type}}" text-color="#fff" wx:for="{{tags}}" wx:key="index">{{item.name}}</van-tag>
 		</view>

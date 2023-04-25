@@ -1,6 +1,26 @@
 <view class="page">
 	<view class="card">
-		经验
+		<view class="title">工作经历</view>
+		<van-divider />
+		<view class="box">
+			<view wx:for="{{list}}" wx:key="index" class="one">
+				<view class="onedot"></view>
+				<!-- wx:if="index!=list.length-1" -->
+				<view class="oneline"></view>
+				<view class="onemain" style="min-height: 200rpx;">
+					<view class="flex between align-items-center">
+						<view class="onemaintitle">{{item.time}}</view>
+						<van-tag color="#53cac3">前端开发</van-tag>
+					</view>
+
+					<view class="onemaintitle">
+						{{item.company}}
+						<!-- <van-tag color="#53cac3" wx:if="{{index===2}}">实习</van-tag> -->
+					</view>
+					<view class="onemaincon">{{item.content}}</view>
+				</view>
+			</view>
+		</view>
 	</view>
 
 </view>

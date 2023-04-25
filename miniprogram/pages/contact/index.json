@@ -1,4 +1,7 @@
 {
-        "usingComponents": {},
+        "usingComponents": {
+                "van-divider": "@vant/weapp/divider/index",
+                "van-tag": "@vant/weapp/tag/index"
+        },
         "navigationBarTitleText": "联系方式"
 }
