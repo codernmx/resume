@@ -1,6 +1,29 @@
 <view class="page">
 	<view class="card">
-		项目
+		<view class="title">项目经历</view>
+		<van-divider />
+		<view class="box">
+			<view wx:for="{{list}}" wx:key="index" class="one">
+				<view class="onedot"></view>
+				<!-- wx:if="index!=list.length-1" -->
+				<view class="oneline"></view>
+				<view class="onemain" style="min-height: 200rpx;">
+					<view class="flex between align-items-center">
+						<view class="onemaintitle">{{item.startDate}}-{{item.endDate}}</view>
+						<van-tag color="#53cac3">{{item.projectName}}</van-tag>
+					</view>
+
+					<view class="onemaintitle">
+						{{item.company}}
+						<!-- <van-tag color="#53cac3" wx:if="{{index===2}}">实习</van-tag> -->
+					</view>
+					<view class="onemaincon">项目介绍：{{item.projectDesc}}</view>
+					<view class="onemaincon">技术栈：<text style="color: tomato;">{{item.technology}}</text></view>
+					<view class="onemaincon">项目职责：{{item.projectContent}}</view>
+					<view class="onemaincon" style="text-indent:0;">项目地址： <text style="color:#53cac3">{{item.previewUrl}}</text></view>
+				</view>
+			</view>
+		</view>
 	</view>
 
 </view>

@@ -9,12 +9,12 @@
 				<view class="oneline"></view>
 				<view class="onemain" style="min-height: 200rpx;">
 					<view class="flex between align-items-center">
-						<view class="onemaintitle">{{item.time}}</view>
+						<view class="onemaintitle">{{item.startDate}}-{{item.endDate}}</view>
 						<van-tag color="#53cac3">前端开发</van-tag>
 					</view>
 
 					<view class="onemaintitle">
-						{{item.company}}
+						{{item.companyName}}
 						<!-- <van-tag color="#53cac3" wx:if="{{index===2}}">实习</van-tag> -->
 					</view>
 					<view class="onemaincon">{{item.content}}</view>

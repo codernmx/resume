@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "van-tag": "@vant/weapp/tag/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
   },
   "navigationBarTitleText": "基本信息"
 }
