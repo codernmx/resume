@@ -16,13 +16,16 @@ Page({
         },
         call() {
                 wx.makePhoneCall({
-                        phoneNumber: '19923756596' //仅为示例，并非真实的电话号码
+                        // @ts-ignore
+                        phoneNumber: this.data.userInfo.phone //仅为示例，并非真实的电话号码
                 })
         },
         copy(e: any) {
                 wx.setClipboardData({
                         data: e.currentTarget.dataset.value,
-                        success(res) { }
+                        success: (res: any) => {
+                                console.log(res);
+                        }
                 })
         },
 

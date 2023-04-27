@@ -2,23 +2,23 @@
 	<view class="card plate">
 		<view style="height: 15rpx;"></view>
 		<view class="head">
-			<image src="https://bt.nmxgzs.cn/upload/2023/S4pTuF.JPG" mode="" />
+			<image src="{{userInfo.avatar}}" mode="" />
 		</view>
 		<view class="title">社交主页</view>
 		<view style="height: 50rpx;"></view>
 		<van-divider />
-		<view class="flex between" bindtap="copy" data-value="https://github.com/codernmx">
+		<view class="flex between" bindtap="copy" data-value="{{userInfo.gitHubUrl}}">
 			<view>
 				<text class="iconfont icon-github"></text>
-				GitHub 累计Stars超130+
+				{{userInfo.gitHubDesc}}
 			</view>
 			<van-tag type="success">复制地址</van-tag>
 		</view>
 		<van-divider />
-		<view class="flex between top-30" bindtap="copy" data-value="https://blog.csdn.net/qq_31754591">
+		<view class="flex between top-30" bindtap="copy" data-value="{{userInfo.csdnUrl}}">
 			<view>
 				<text class="iconfont icon-csdn"></text>
-				CSDN 累计文章230多篇,全站排名5000内
+				{{userInfo.csdnDesc}}
 			</view>
 			<van-tag type="success">复制地址</van-tag>
 		</view>
@@ -28,30 +28,30 @@
 		<van-divider />
 		<view class="flex between" bindtap="call">
 			<view>
-				<text class="iconfont icon-shoujihao"></text>199****6596
+				<text class="iconfont icon-shoujihao"></text>{{userInfo.phone}}
 			</view>
 			<van-tag type="success">呼叫</van-tag>
 		</view>
 		<van-divider />
-		<view class="flex between" bindtap="copy" data-value="Maisy_915">
-			<view style="letter-spacing: 3rpx;">
-				<text class="iconfont icon-weixin"></text>Maisy_915
+		<view class="flex between" bindtap="copy" data-value="{{userInfo.weChat}}">
+			<view>
+				<text class="iconfont icon-weixin"></text>{{userInfo.weChat}}
 			</view>
 
 			<van-tag type="success">复制</van-tag>
 		</view>
 		<van-divider />
-		<view class="flex between" bindtap="copy" data-value="2507128400">
+		<view class="flex between" bindtap="copy" data-value="{{userInfo.qq}}">
 			<view>
-				<text class="iconfont icon-qq"></text>2507128400
+				<text class="iconfont icon-qq"></text>{{userInfo.qq}}
 			</view>
 
 			<van-tag type="success">复制</van-tag>
 		</view>
 		<van-divider />
-		<view class="flex between" bindtap="copy" data-value="nmxgzs@qq.com">
+		<view class="flex between" bindtap="copy" data-value="{{userInfo.email}}">
 			<view>
-				<text class="iconfont icon-youxiang"></text>nmxgzs@qq.com
+				<text class="iconfont icon-youxiang"></text>{{userInfo.email}}
 			</view>
 			<van-tag type="success">复制</van-tag>
 		</view>

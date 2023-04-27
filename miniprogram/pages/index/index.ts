@@ -4,44 +4,21 @@ const app = getApp<IAppOption>()
 
 Page({
 	data: {
-		tags: [
-			{
-				type: 'primary',
-				name: 'Vue2/Vue3'
-			},
-			{
-				type: 'success',
-				name: 'React'
-			},
-			{
-				type: 'danger',
-				name: 'NodeJs'
-			},
-			{
-				type: 'warning',
-				name: '小程序'
-			},
-			{
-				type: 'primary',
-				name: 'Git'
-			},
-			{
-				type: 'success',
-				name: 'Vite'
-			},
-			{
-				type: 'danger',
-				name: 'Es6'
-			},
-			{
-				type: 'warning',
-				name: 'Mysql'
-			}
-		]
+		tags: []
 	},
-
 	onLoad() {
 		// @ts-ignore
+		wx.login({
+			success: (res: any) => {
+				if (res.code) {
+					this.getUserInfo(res.code)
+				} else {
+					console.log('登录失败！' + res.errMsg)
+				}
+			}
+		})
+	},
+	getUserInfo(code: String) {
 		wx.showLoading({
 			title: '加载中',
 			mask: true
@@ -49,20 +26,34 @@ Page({
 		wx.request({
 			url: 'https://bt.nmxgzs.cn/mini/program/resume/get/userInfo', //仅为示例，并非真实的接口地址
 			method: 'POST',
-			data: {},
+			data: { code },
 			header: {
 				'content-type': 'application/json' // 默认值
 			},
 			success: (res: any) => {
-				console.log(res.data.data)
-				getApp().globalData.userInfo = res.data.data
-				this.setData({ userInfo: res.data.data })
 				wx.hideLoading()
+				getApp().globalData.userInfo = res.data.data
+				if (res.data.code != 200) {
+					wx.showToast({
+						title: '内部错误',
+						icon: 'none'
+					})
+					return 0
+				}
+				this.setData({ userInfo: res.data.data })
+				wx.showToast({
+					title: res.data.data.openId,
+					icon: 'none'
+				})
+			},
+			fail: (err: any) => {
+				wx.showToast({
+					title: err.toString(),
+					icon: 'none'
+				})
 			}
 		})
-
 	},
 	onShareAppMessage() { },
 	onShareTimeline() { }
-
 })
