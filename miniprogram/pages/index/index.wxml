@@ -6,7 +6,7 @@
 				<van-image width="100%" height="100%" src="{{userInfo.avatar}}" />
 			</view>
 			<view style="margin-left:30rpx">
-				<view class="nickName">刘常灵
+				<view class="nickName">{{userInfo.name}}
 					<van-tag color="#53cac3">{{userInfo.workingYears}}</van-tag>
 				</view>
 				<view class="content age">
