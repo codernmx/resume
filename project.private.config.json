@@ -3,7 +3,7 @@
         "projectname": "resume",
         "setting": {
                 "compileHotReLoad": true,
-                "urlCheck": false
+                "urlCheck": true
         },
         "condition": {
                 "miniprogram": {
@@ -23,7 +23,7 @@
                                         "scene": null
                                 },
                                 {
-                                        "name": "项目经历",
+                                        "name": "项目经验",
                                         "pathName": "pages/project/index",
                                         "query": "",
                                         "launchMode": "default",

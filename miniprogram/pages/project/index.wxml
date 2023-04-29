@@ -1,6 +1,6 @@
 <view class="page">
 	<view class="card">
-		<view class="title">项目经历</view>
+		<view class="title">项目经验</view>
 		<van-divider />
 		<view class="box">
 			<view wx:for="{{list}}" wx:key="index" class="one">

@@ -3,5 +3,5 @@
                 "van-tag": "@vant/weapp/tag/index",
                 "van-divider": "@vant/weapp/divider/index"
         },
-        "navigationBarTitleText": "项目经历"
+        "navigationBarTitleText": "项目经验"
 }

@@ -7,10 +7,17 @@
 			</view>
 			<view style="margin-left:30rpx">
 				<view class="nickName">{{userInfo.name}}
-					<van-tag color="#53cac3">{{userInfo.workingYears}}</van-tag>
+					<van-tag color="#53cac3">{{userInfo.yearTags}}</van-tag>
 				</view>
 				<view class="content age">
 					{{userInfo.sex}} / {{userInfo.age}} / {{userInfo.politics}}
+				</view>
+				<view class="flex icon">
+					<view class="iconfont icon-github" bindtap="copy" data-value="{{userInfo.gitHubUrl}}" data-type="github"></view>
+					<view class="iconfont icon-csdn" bindtap="copy" data-value="{{userInfo.csdnUrl}}" data-type="csdn"></view>
+					<view class="iconfont icon-shoujihao" bindtap="call"></view>
+					<view class="iconfont icon-weixin" bindtap="copy" data-value="{{userInfo.weChat}}" data-type="weixin"></view>
+					<view class="iconfont icon-youxiang" bindtap="copy" data-value="{{userInfo.email}}" data-type="email"></view>
 				</view>
 			</view>
 		</view>
@@ -18,10 +25,22 @@
 	<view class="card top-30 content">
 		<van-skeleton title row="3" wx:if="{{!userInfo}}" />
 		<block wx:else="{{userInfo}}">
-			<view class="title">个人优势</view>
+			<view class="title">自我鉴定</view>
 			<van-divider />
 			<view class="top-30" style="text-indent: 20rpx;">
 				{{userInfo.advantage}}
+			</view>
+		</block>
+
+	</view>
+
+	<view class="card top-30">
+		<van-skeleton title row="3" wx:if="{{!userInfo}}" />
+		<block wx:else="{{userInfo}}">
+			<view class="title">工作技能</view>
+			<van-divider />
+			<view class="top-30" style="display:flex;flex-wrap:wrap;justify-content: start;">
+				<van-tag style="margin:0 5rpx 20rpx 0" type="{{item.typeStr}}" text-color="#fff" wx:for="{{userInfo.skill}}" wx:key="index">{{item.name}}</van-tag>
 			</view>
 		</block>
 
@@ -33,21 +52,13 @@
 			<view class="title">基本信息</view>
 			<van-divider />
 			<view class="top-30 flex between">
-				<view>学历</view>
-				<view>{{userInfo.degree}}</view>
-			</view>
-			<view class="top-30 flex between">
 				<view>居住地</view>
 				<view>{{userInfo.address}}</view>
 			</view>
-			<view class="top-30 flex between">
-				<view>籍贯</view>
-				<view>{{userInfo.native}}</view>
-			</view>
-			<view class="top-30 flex between">
+			<!-- <view class="top-30 flex between">
 				<view>工作年限</view>
 				<view>{{userInfo.workingYears}}</view>
-			</view>
+			</view> -->
 			<view class="top-30 flex between">
 				<view>岗位意向</view>
 				<view>{{userInfo.job}}</view>
@@ -60,7 +71,7 @@
 	<view class="card top-30 content">
 		<van-skeleton title row="3" wx:if="{{!userInfo}}" />
 		<block wx:else="{{userInfo}}">
-			<view class="title">教育经历</view>
+			<view class="title">教育背景</view>
 			<van-divider />
 			<view class="top-30 flex between" wx:for="{{userInfo.education}}">
 				<view>{{item.school}}</view>
@@ -70,16 +81,36 @@
 			</view>
 		</block>
 	</view>
-	<view class="card top-30">
-		<van-skeleton title row="3" wx:if="{{!userInfo}}" />
-		<block wx:else="{{userInfo}}">
-			<view class="title">技能标签</view>
-			<van-divider />
-			<view class="top-30" style="display:flex;flex-wrap:wrap;justify-content: start;">
-				<van-tag style="margin:0 5rpx 20rpx 0" type="{{item.type}}" text-color="#fff" wx:for="{{userInfo.skill}}" wx:key="index">{{item.name}}</van-tag>
-			</view>
-		</block>
 
+
+
+
+	<view class="card top-30">
+		<view class="title">工作经历</view>
+		<van-divider />
+		<view class="box">
+			<view wx:for="{{userInfo.company}}" wx:key="index" class="one">
+				<view class="onedot"></view>
+				<!-- wx:if="index!=list.length-1" -->
+				<view class="oneline"></view>
+				<view class="onemain" style="min-height: 200rpx;">
+					<view class="flex between align-items-center">
+						<view class="onemaintitle">{{item.startDate}}-{{item.endDate}}</view>
+						<van-tag color="#53cac3">{{item.job}}</van-tag>
+					</view>
+
+					<view class="onemaintitle">
+						{{item.companyName}}
+						<!-- <van-tag color="#53cac3" wx:if="{{index===2}}">实习</van-tag> -->
+					</view>
+					<view class="onemaincon">{{item.content}}</view>
+				</view>
+			</view>
+		</view>
 	</view>
-	<view style="height: 120rpx;"></view>
+	<view class="text-center cop top-30" bindtap="copyAdmin">
+		<!-- <view>Copyright © 2023 By LCL</view> -->
+		UserId：{{userInfo.openId}}
+	</view>
+	<view style="height: 30rpx;"></view>
 </view>

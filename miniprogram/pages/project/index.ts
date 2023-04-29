@@ -75,6 +75,14 @@ Page({
         /**
          * 用户点击右上角分享
          */
-        onShareAppMessage() { },
-        onShareTimeline() { }
+        onShareAppMessage() {
+                return {
+                        path: '/pages/index/index'
+                }
+        },
+        onShareTimeline() {
+                return {
+                        path: '/pages/index/index'
+                }
+        }
 })

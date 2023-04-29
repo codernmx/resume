@@ -10,7 +10,7 @@
 				<view class="onemain" style="min-height: 200rpx;">
 					<view class="flex between align-items-center">
 						<view class="onemaintitle">{{item.startDate}}-{{item.endDate}}</view>
-						<van-tag color="#53cac3">前端开发</van-tag>
+						<van-tag color="#53cac3">{{item.job}}</van-tag>
 					</view>
 
 					<view class="onemaintitle">
